@@ -1,0 +1,10 @@
+local Groupid = "32322753" --들어오게 할 그룹의 아이디 입력
+local Kickmsg = "당신은 게임 개발자가 지정한 그룹에 가입하지 않으셨습니다. 해당 그룹에 가입후 재접속해주세요."
+
+
+game.Players.PlayerAdded:Connect(function(plr)
+	local rannk = plr:IsInGroup(Groupid)
+	if rannk == false then
+		plr:Kick(Kickmsg)
+	end
+end)
